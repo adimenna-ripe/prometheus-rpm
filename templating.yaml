@@ -184,7 +184,7 @@ packages:
       <<: *default_context
       static:
         <<: *default_static_context
-        version: 0.16.0
+        version: 0.15.0
         license: ASL 2.0
         URL: https://github.com/prometheus-community/postgres_exporter
         user: postgres
@@ -235,7 +235,7 @@ packages:
     context:
       static:
         <<: *default_static_context
-        version: 1.61.0
+        version: 1.66.0
         license: MIT
         summary: Prometheus exporter for Redis server metrics.
         description: Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x, 5.x and 6.x
