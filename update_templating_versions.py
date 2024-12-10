@@ -90,7 +90,7 @@ def updateGHTemplate(
     """
     Creates PR with updated version
     """
-    github_repo_path = "lest/prometheus-rpm"
+    github_repo_path = "adimenna-ripe/prometheus-rpm"
     g = Github(github_token)
     repo = g.get_repo(github_repo_path)
 
