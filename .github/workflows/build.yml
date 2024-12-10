@@ -60,13 +60,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Ruby environment
-        uses: ruby/setup-ruby@v1
+      - name: Setup Python environment
+        uses: actions/setup-python@v4
         with:
-          ruby-version: 2.7
+          python-version: "3.11"
 
-      - name: Install PackageCloud CLI
-        run: gem install package_cloud
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade cloudsmith-cli
 
       - name: Create GPG key secret
         if: env.RPM_GPG_KEY_SECRET != null
@@ -95,4 +96,4 @@ jobs:
       - name: Publish
         run: make publish${{ matrix.version }}
         env:
-          PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
+          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
