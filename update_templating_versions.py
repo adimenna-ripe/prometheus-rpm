@@ -74,7 +74,7 @@ def getGHBranches(github_token):
     """
     Gets existing branches to check if PR is already present
     """
-    github_repo_path = "lest/prometheus-rpm"
+    github_repo_path = "adimenna-ripe/prometheus-rpm"
     logging.debug("Getting list of existing GitHub branches")
     g = Github(github_token)
     branches = []

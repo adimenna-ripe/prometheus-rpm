@@ -84,7 +84,7 @@ $(addprefix build9-,$(MANUAL)):
 		-v ${PWD}/_dist9:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist9:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle9 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle9 \
 		build-spec SOURCES/${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist9 ] || mkdir ${PWD}/_dist9      
@@ -92,7 +92,7 @@ $(addprefix build9-,$(MANUAL)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist9:/var/tmp/ \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle9 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle9 \
 		/bin/bash -c '/usr/bin/dnf install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 $(addprefix build8-,$(MANUAL)):
@@ -104,7 +104,7 @@ $(addprefix build8-,$(MANUAL)):
 		-v ${PWD}/_dist8:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist8:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle8 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle8 \
 		build-spec SOURCES/${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist8 ] || mkdir ${PWD}/_dist8      
@@ -112,7 +112,7 @@ $(addprefix build8-,$(MANUAL)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist8:/var/tmp/ \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle8 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle8 \
 		/bin/bash -c '/usr/bin/dnf install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 $(addprefix build7-,$(MANUAL)):
@@ -124,7 +124,7 @@ $(addprefix build7-,$(MANUAL)):
 		-v ${PWD}/_dist7:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist7:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_yum:/var/cache/yum \
-		ghcr.io/lest/centos-rpm-builder:7 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:7 \
 		build-spec SOURCES/${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist7 ] || mkdir ${PWD}/_dist7      
@@ -132,7 +132,7 @@ $(addprefix build7-,$(MANUAL)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist7:/var/tmp/ \
 		-v ${PWD}/_cache_yum:/var/cache/yum \
-		ghcr.io/lest/centos-rpm-builder:7 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:7 \
 		/bin/bash -c '/usr/bin/yum install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 
@@ -151,7 +151,7 @@ $(addprefix build9-,$(AUTO_GENERATED)):
 		-v ${PWD}/_dist9:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist9:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle9 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle9 \
 		build-spec SOURCES/autogen_${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist9 ] || mkdir ${PWD}/_dist9      
@@ -159,7 +159,7 @@ $(addprefix build9-,$(AUTO_GENERATED)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist9:/var/tmp/ \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle9 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle9 \
 		/bin/bash -c '/usr/bin/dnf install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 sign9:
@@ -169,7 +169,7 @@ sign9:
 		-v ${PWD}/RPM-GPG-KEY-prometheus-rpm:/rpmbuild/RPM-GPG-KEY-prometheus-rpm \
 		-v ${PWD}/secret.asc:/rpmbuild/secret.asc \
 		-v ${PWD}/.passphrase:/rpmbuild/.passphrase \
-		ghcr.io/lest/centos-rpm-builder:oracle9 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle9 \
 		bin/sign
 
 $(addprefix build8-,$(AUTO_GENERATED)):
@@ -183,7 +183,7 @@ $(addprefix build8-,$(AUTO_GENERATED)):
 		-v ${PWD}/_dist8:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist8:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle8 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle8 \
 		build-spec SOURCES/autogen_${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist8 ] || mkdir ${PWD}/_dist8      
@@ -191,7 +191,7 @@ $(addprefix build8-,$(AUTO_GENERATED)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist8:/var/tmp/ \
 		-v ${PWD}/_cache_dnf:/var/cache/dnf \
-		ghcr.io/lest/centos-rpm-builder:oracle8 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle8 \
 		/bin/bash -c '/usr/bin/dnf install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 sign8:
@@ -201,7 +201,7 @@ sign8:
 		-v ${PWD}/RPM-GPG-KEY-prometheus-rpm:/rpmbuild/RPM-GPG-KEY-prometheus-rpm \
 		-v ${PWD}/secret.asc:/rpmbuild/secret.asc \
 		-v ${PWD}/.passphrase:/rpmbuild/.passphrase \
-		ghcr.io/lest/centos-rpm-builder:oracle8 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:oracle8 \
 		bin/sign
 
 $(addprefix build7-,$(AUTO_GENERATED)):
@@ -215,7 +215,7 @@ $(addprefix build7-,$(AUTO_GENERATED)):
 		-v ${PWD}/_dist7:/rpmbuild/RPMS/x86_64 \
 		-v ${PWD}/_dist7:/rpmbuild/RPMS/noarch \
 		-v ${PWD}/_cache_yum:/var/cache/yum \
-		ghcr.io/lest/centos-rpm-builder:7 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:7 \
 		build-spec SOURCES/autogen_${PACKAGE}.spec
 	# Test the install
 	[ -d ${PWD}/_dist7 ] || mkdir ${PWD}/_dist7
@@ -223,7 +223,7 @@ $(addprefix build7-,$(AUTO_GENERATED)):
 	docker run --privileged ${DOCKER_FLAGS} \
 		-v ${PWD}/_dist7:/var/tmp/ \
 		-v ${PWD}/_cache_yum:/var/cache/yum \
-		ghcr.io/lest/centos-rpm-builder:7 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:7 \
 		/bin/bash -c '/usr/bin/yum install --verbose -y /var/tmp/${PACKAGE}*.rpm'
 
 sign7:
@@ -233,7 +233,7 @@ sign7:
 		-v ${PWD}/RPM-GPG-KEY-prometheus-rpm:/rpmbuild/RPM-GPG-KEY-prometheus-rpm \
 		-v ${PWD}/secret.asc:/rpmbuild/secret.asc \
 		-v ${PWD}/.passphrase:/rpmbuild/.passphrase \
-		ghcr.io/lest/centos-rpm-builder:7 \
+		ghcr.io/adimenna-ripe/centos-rpm-builder:7 \
 		bin/sign
 
 $(foreach \

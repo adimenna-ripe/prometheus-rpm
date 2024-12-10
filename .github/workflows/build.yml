@@ -49,7 +49,7 @@ jobs:
 
   publish_packages:
     needs: build_packages
-    if: github.ref == 'refs/heads/master' && github.repository == 'lest/prometheus-rpm'
+    if: github.ref == 'refs/heads/master' && github.repository == 'adimenna-ripe/prometheus-rpm'
     strategy:
       matrix:
         version:
