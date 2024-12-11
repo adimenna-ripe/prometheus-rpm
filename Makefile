@@ -257,10 +257,10 @@ $(foreach \
 sign: sign9 sign8 sign7
 
 publish9: sign9
-	cloudsmith push rpm adimenna-ripe/prometheus-rpm prometheus-rpm/release/el/9 _dist9/*.rpm -k ${CLOUDSMITH_TOKEN}
+	cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/9 _dist9/*.rpm -k ${CLOUDSMITH_TOKEN}
 
 publish8: sign8
-	cloudsmith push rpm adimenna-ripe/prometheus-rpm prometheus-rpm/release/el/8 _dist8/*.rpm -k ${CLOUDSMITH_TOKEN}
+	cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/8 _dist8/*.rpm -k ${CLOUDSMITH_TOKEN}
 
 publish7: sign7
 	package_cloud push --skip-errors prometheus-rpm/release/el/7 _dist7/*.rpm
