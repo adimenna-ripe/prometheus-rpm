@@ -259,12 +259,12 @@ sign: sign9 sign8 sign7
 
 publish9: sign9
 	for package in $$(ls _dist9/*.rpm); do\
-	    cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/9 $$(package) -k ${CLOUDSMITH_TOKEN};\
+	    cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/9 $$package -k ${CLOUDSMITH_TOKEN};\
 	done
 
 publish8: sign8
 	for package in $$(ls _dist8/*.rpm); do\
-	    cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/8 $$(package) -k ${CLOUDSMITH_TOKEN};\
+	    cloudsmith push rpm adimenna-ripe/prometheus-rpm/el/8 $$package -k ${CLOUDSMITH_TOKEN};\
 	done
 
 publish7: sign7
