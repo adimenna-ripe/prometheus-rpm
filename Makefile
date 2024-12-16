@@ -41,7 +41,6 @@ openstack_exporter \
 process_exporter \
 ssl_exporter \
 sachet \
-jiralert \
 ebpf_exporter \
 karma \
 bareos_exporter \
