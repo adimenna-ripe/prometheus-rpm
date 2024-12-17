@@ -1,11 +1,7 @@
 SHELL := bash
 
 MANUAL = prometheus2 \
-thanos \
-jmx_exporter \
-rabbitmq_exporter \
 ping_exporter \
-couchbase_exporter \
 mtail \
 
 AUTO_GENERATED = alertmanager \
@@ -14,46 +10,27 @@ blackbox_exporter \
 snmp_exporter \
 pushgateway \
 mysqld_exporter \
-elasticsearch_exporter \
 postgres_exporter \
-pgbouncer_exporter \
 redis_exporter \
-haproxy_exporter \
 kafka_exporter \
 nginx_exporter \
 bind_exporter \
 json_exporter \
 keepalived_exporter \
-jolokia_exporter \
-frr_exporter \
-domain_exporter \
-mongodb_exporter \
-graphite_exporter \
 statsd_exporter \
 collectd_exporter \
 memcached_exporter \
-consul_exporter \
 smokeping_prober \
 iperf3_exporter \
 apache_exporter \
-influxdb_exporter \
 exporter_exporter \
 junos_exporter \
-openstack_exporter \
 process_exporter \
 ssl_exporter \
-sachet \
-ebpf_exporter \
 karma \
-bareos_exporter \
-artifactory_exporter \
 phpfpm_exporter \
-ipmi_exporter \
 sql_exporter \
-nats_exporter \
-prometheus_msteams \
 cadvisor \
-squid_exporter \
 dellhw_exporter \
 exim_exporter \
 systemd_exporter
